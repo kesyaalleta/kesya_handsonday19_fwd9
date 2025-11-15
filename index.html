@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FUSEN - Custom Packaging Made Easy</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Animasi fade-up */
+    .animate-fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-fade-up.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animasi slide from right */
+    .animate-slide-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .animate-slide-right.appear {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Hover scale untuk gambar */
+    .hover-grow {
+      transition: transform 0.3s ease;
+    }
+    .hover-grow:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header / Navbar -->
+  <header class="bg-white shadow-sm border-b">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <h1 class="text-xl font-bold animate-fade-up">FUSEN</h1>
+        <nav class="hidden md:flex space-x-6 text-sm">
+          <a href="#" class="hover:text-orange-500 transition">Home</a>
+          <a href="#" class="hover:text-orange-500 transition">Products</a>
+          <a href="#" class="hover:text-orange-500 transition">About</a>
+          <a href="#" class="hover:text-orange-500 transition">Contact</a>
+        </nav>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition animate-fade-up">Sign Up</button>
+        <button class="md:hidden" id="mobile-menu-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden bg-white border-t p-4 hidden">
+    <nav class="flex flex-col space-y-4">
+      <a href="#" class="hover:text-orange-500 transition">Home</a>
+      <a href="#" class="hover:text-orange-500 transition">Products</a>
+      <a href="#" class="hover:text-orange-500 transition">About</a>
+      <a href="#" class="hover:text-orange-500 transition">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="py-12 px-4 md:px-8 lg:px-16 flex flex-col md:flex-row items-center gap-8">
+    <div class="md:w-1/2 space-y-6 animate-fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold">CUSTOM PACKAGING MADE EASY</h2>
+      <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <button class="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition transform hover:scale-105">Get Started</button>
+    </div>
+    <div class="md:w-1/2 flex justify-center animate-slide-right">
+      <img src="a colorful takeout f.png" alt="Custom Packaging Box" class="hover-grow rounded-lg shadow-lg max-w-full h-auto" />
+    </div>
+  </section>
+
+  <!-- Brand Logos -->
+  <section class="py-8 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h3 class="text-center text-lg font-medium mb-6 animate-fade-up">Trusted by Brands Like</h3>
+      <div class="flex flex-wrap justify-center gap-8">
+        <img src="https://via.placeholder.com/80x40?text=CocaCola" alt="Coca-Cola" class="h-10 opacity-80 hover:opacity-100 transition" />
+        <img src="https://via.placeholder.com/80x40?text=Nestle" alt="Nestlé" class="h-10 opacity-80 hover:opacity-100 transition" />
+        <img src="https://via.placeholder.com/80x40?text=Lilly" alt="Lilly" class="h-10 opacity-80 hover:opacity-100 transition" />
+        <img src="https://via.placeholder.com/80x40?text=D'Grafin" alt="D'Grafin" class="h-10 opacity-80 hover:opacity-100 transition" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-12 px-4 md:px-8 lg:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-1 animate-fade-up">
+        <img src="An illustration of a.png" alt="Low Minimum" class="mb-4 max-w-[60px]" />
+        <h3 class="text-xl font-semibold">Low Minimum Orders</h3>
+        <p class="mt-2 text-gray-600">Start small and scale up as your business grows.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-1 animate-fade-up" style="animation-delay: 0.1s">
+        <img src="kk.png" alt="Custom Design" class="mb-4 max-w-[60px]" />
+        <h3 class="text-xl font-semibold">1-Minute Custom Designs</h3>
+        <p class="mt-2 text-gray-600">Design your packaging in minutes.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-1 animate-fade-up" style="animation-delay: 0.2s">
+        <img src="pp.png" alt="Inventory" class="mb-4 max-w-[60px]" />
+        <h3 class="text-xl font-semibold">Inventory Management</h3>
+        <p class="mt-2 text-gray-600">Track stock levels and reorder automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Preview -->
+  <section class="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2 animate-slide-right">
+        <img src="An ecommerce product.png" alt="Product Dashboard" class="hover-grow rounded-lg shadow-lg max-w-full h-auto" />
+      </div>
+      <div class="md:w-1/2 space-y-6 animate-fade-up">
+        <h2 class="text-3xl font-bold">1 Minute Custom Designs</h2>
+        <p class="text-gray-600">Our platform lets you customize packaging designs in under a minute.</p>
+        <button class="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition transform hover:scale-105">Try It Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="py-12 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto text-center animate-fade-up">
+      <h2 class="text-2xl font-bold mb-4">Sign up for Newsletter to get 10% OFF</h2>
+      <p class="text-gray-600 mb-6">Join thousands of businesses getting exclusive deals.</p>
+      <form class="flex flex-col sm:flex-row gap-4 justify-center">
+        <input type="email" placeholder="Enter your email" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required />
+        <button type="submit" class="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 transition">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 px-4 md:px-8 lg:px-16">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 animate-fade-up">
+      <div>
+        <h3 class="text-xl font-bold mb-4">FUSEN</h3>
+        <p class="text-gray-400">Making custom packaging simple, fast, and affordable.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Company</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-white transition">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition">Careers</a></li>
+          <li><a href="#" class="hover:text-white transition">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Support</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+          <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+          <li><a href="#" class="hover:text-white transition">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Legal</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-4 text-center text-gray-400 animate-fade-up">
+      © 2025 FUSEN. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript: Animasi & Mobile Menu -->
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Animasi saat scroll masuk viewport
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-fade-up, .animate-slide-right');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    };
+
+    // Jalankan saat halaman dimuat
+    if (window.IntersectionObserver) {
+      document.addEventListener('DOMContentLoaded', animateOnScroll);
+    } else {
+      // Fallback: tampilkan langsung jika browser lawas
+      document.querySelectorAll('.animate-fade-up, .animate-slide-right').forEach(el => {
+        el.classList.add('appear');
+      });
+    }
+  </script>
+
+</body>
+</html>
